@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ucan</title>
+    
+    <link href="../calendario/calendario.css" rel="stylesheet" type="text/css" />
+    <link href="./transaction.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../calendario/CalendarPicker.style.css">
+    <style>
+        body {
+            display: grid;
+            justify-items: center;
+            align-content: center;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+
+        code {
+            font-size: 0.7rem;
+            background-color: rgb(249, 249, 249);
+            padding: 0.5rem;
+            margin: 1rem 0 3rem;
+            border-radius: 5px;
+            box-shadow: 2px 2px 0.2rem rgba(0, 0, 0, 0.2);
+        }
+
+        code h3 {
+            padding: 0;
+            margin: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+        code pre {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
+
+        .pink {
+            color: rgb(233, 72, 99);
+        }
+
+        #example {
+            margin: 0 auto;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+        #example h3:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+
+        #example p {
+            font-size: 0.9rem;
+        }
+
+        #download-options {
+            margin-bottom: 5rem;
+        }
+
+        #download-options h2:last-of-type {
+            margin-top: 2rem;
+        }
+
+        #download-options code {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class='menu-container'>
+            <div class='ucan'>UCAN</div>
+            <nav id="nav-principal">
+                <ul>
+                    <li><a href='../home/home.html'>Tarefas</a></li>
+                    <li><a href='../dicas/dicas.html'>Dicas de saúde</a></li>
+                    <li><a href='../pomodoro/index.html'>Pomodoro</a></li>
+                    <li><a><button type="button" onclick="logout()" id="sai">Sair</button></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="calendario">
+        <form>
+            <form>
+          
+                <div><label>O evento é</label></div>
+                
+                <label for="expense">Individual</label><input type="radio" name="type" checked id="expense">
+                
+                <label for="income">Coletivo</label><input type="radio" name="type" id="income">
+            
+          
+                <div><label>Data</label></div>
+                <input type="date" onchange="onChangeDate()" id="date">
+                <div class="error" id="date-required-error">
+                    Data é obrigatória/inválida
+                </div>
+                
+            
+                <div><label>Horário</label></div>
+                <input type="time" onchange="onChangeTime()" id="time">
+                <div class="error" id="date-required-error">
+                    Horário é obrigatório/inválido
+                </div>
+                
+          
+                <div><label>Tipo de evento</label></div>
+                <select id="currency">
+                    <option value="Familiar">Familiar</option>
+                    <option value="Negócios">Negócios</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Escolar" selected>Escolar</option>
+                </select>
+           
+                <div><label>Urgencia *</label></div>
+                <select onchange="onChangeTransactionType()" id="transaction-type">
+                    <option value=""> Selecione a prioridade do evento</option>
+                    <option>Urgente</option>
+                    <option>Não urgente</option>
+                    <option>Prioridade</option>
+                    <option>Pouco urgente</option>
+                </select>
+                <div class="error" id="transaction-type-required-error">
+                    Urgencia é obrigatória
+                </div>
+            
+                
+                <div class="error" id="transaction-type-required-error">
+                    Tipo é obrigatória
+                </div>
+            
+                <div><label>Envolvimento de pessoas</label></div>
+                <input type="number" onchange="onChangeValue()" id="value">
+
+                <div class="error" id="value-less-or-equal-to-zero-error">
+                    Valor deve ser maior que zero
+                </div>
+                <div><label>Descrição</label></div>
+                <input type="text" id="description">
+            
+            <button type="button" class="solid" disabled id="save-button"
+                onclick="saveTransaction()">
+                Salvar
+            </button>
+            <br>
+            <br>
+            <a href="../home/home.html">
+            <button type="button" class="solid" id="boot">Cancelar</button>
+            </a>
+    
+        </form>
+
+        <div class ="calendario">
+            <div id="myCalendarWrapper"></div>
+             </div>
+    </div>
+</body>
+
+<link rel="stylesheet" href="../../style.css">
+
+<link rel="stylesheet" href="transaction.css">
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="../../bd/firebase-init.js"></script>
+<script src="../../bd/auth-guard.js"></script>
+<script src="../login/loading.js"></script>
+<script src="../../services/transaction.service.js"></script>
+<script src="transaction.js"></script>
+
+
+
+<script src="../calendario/CalendarPicker.js"></script>
+<script src="../home/home.js"></script>
+
+<script>
+    const nextYear = new Date().getFullYear() + 1;
+    const myCalender = new CalendarPicker('#myCalendarWrapper', {
+        // If max < min or min > max then the only available day will be today.
+        min: new Date(),
+        max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Nov 01 <nextYear>"
+        locale: 'en-US', // Can be any locale or language code supported by Intl.DateTimeFormat, defaults to 'en-US'
+        showShortWeekdays: false // Can be used to fit calendar onto smaller (mobile) screens, defaults to false
+    });
+
+    const currentDateElement = document.getElementById('current-date');
+    currentDateElement.textContent = myCalender.value;
+
+    const currentDayElement = document.getElementById('current-day');
+    currentDayElement.textContent = myCalender.value.getDay();
+
+    const currentToDateString = document.getElementById('current-datestring');
+    currentToDateString.textContent = myCalender.value.toDateString();
+
+    myCalender.onValueChange((currentValue) => {
+        currentDateElement.textContent = currentValue;
+        currentDayElement.textContent = currentValue.getDay();
+        currentToDateString.textContent = currentValue.toDateString();
+
+        console.log(`The current value of the calendar is: ${currentValue}`);
+    });
+</script>
+
+</html>

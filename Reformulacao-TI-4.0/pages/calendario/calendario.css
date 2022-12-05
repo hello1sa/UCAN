@@ -1,0 +1,134 @@
+ *{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kodchasan", serif;
+ }
+  /*Letters*/
+  a {
+  color: #000000;
+  text-decoration: none;  
+  }
+  
+  /*Header*/
+  
+  header{
+    color: #000000;
+    background-color: #cecaf7;  /* Blue */
+    padding: 0px 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  header a {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .menu-container {
+    height: 100px;
+   /* border: 1px solid #000000; */
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  .ucan {
+   /* padding-top: 20px; */
+    display: flex;
+    justify-content: flex-start;    
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    font-family: "Kodchasan", serif;
+    font-size: 45px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;    
+    font-size: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;    
+    font-size: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  p{
+    margin-top: 30px;
+    text-align: justify;
+    font-family: "Crinsom Text";
+    font-size: 25px;
+  }
+  
+  main { 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  flex-direction: row;
+  }
+  
+  
+
+/*Calendário*/
+
+input[type=date], input[type=time], input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+  
+  .calendario{
+    font-family: Bookman, URW Bookman L, serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0%;
+    margin-top: 2%;
+  }
+  
+  .calendario form{
+    background-color:#CFE5FC;
+    border-radius: 15px;
+    width: 30%;
+    padding: 40px;
+    margin-right: 10%;
+  }
+  
+  .aa{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: #1F96DB;
+    width: 70px;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  label{
+    margin-top: 10px;
+  }
+
+  .calendario{
+    margin: 2%;
+    margin-left: 10%;
+  }
+
+  

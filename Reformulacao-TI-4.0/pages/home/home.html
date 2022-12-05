@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Ucan</title>
+    <link href="./home.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class='menu-container'>
+            <div class='ucan'>Ucan</div>
+            <nav id="nav-principal">
+                <ul>
+                    <li><a href='home.html'>Tarefas</a></li>
+                    <li><a href='../dicas/dicas.html'>Dicas de saúde</a></li>
+                    <li><a href='../pomodoro/index.html'>Pomodoro</a></li>
+                    <li><a><button type="button" onclick="logout()" id="sai">Sair</button></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        
+    <h1 id="fundo">Bem vindo,  <a id="usuario"></a></h1>
+    <div class='photo-grid-container'>
+        <div class='photo-grid'>
+            <ol id="transactions">
+            </ol>
+        </div>
+      </div>
+    <button class="fab fixed bottom right" onclick="newTransaction()">+</button>
+</body>
+
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="../../bd/firebase-init.js"></script>
+<script src="../profile/profile.html"></script>
+<script src="../profile/profile.js"></script>
+<script src="../../bd/auth-guard.js"></script>
+<script src="../login/loading.js"></script>
+<script src="../../services/transaction.service.js"></script>
+<script src="home.js"></script>
+
+</html>

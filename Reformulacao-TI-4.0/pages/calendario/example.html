@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@200&display=swap" rel="stylesheet">
+    <title>Calendário</title>
+    <link href="calendario.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./CalendarPicker.style.css">
+    <style>
+        body {
+            display: grid;
+            justify-items: center;
+            align-content: center;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+    
+
+      
+
+        
+
+        code {
+            font-size: 0.7rem;
+            background-color: rgb(249, 249, 249);
+            padding: 0.5rem;
+            margin: 1rem 0 3rem;
+            border-radius: 5px;
+            box-shadow: 2px 2px 0.2rem rgba(0, 0, 0, 0.2);
+        }
+
+        code h3 {
+            padding: 0;
+            margin: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+        code pre {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
+
+        .pink {
+            color: rgb(233, 72, 99);
+        }
+
+        #example {
+            margin: 0 auto;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+        }
+
+        #example h3:not(:first-of-type) {
+            margin-top: 3rem;
+        }
+
+        #example p {
+            font-size: 0.9rem;
+        }
+
+        #download-options {
+            margin-bottom: 5rem;
+        }
+
+        #download-options h2:last-of-type {
+            margin-top: 2rem;
+        }
+
+        #download-options code {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="menu-container">
+          <div class="ucan">Ucan</div>
+          <nav id="nav-principal">
+            <ul>
+              <li><a href="../home/home.html">Tarefas</a></li>
+              <li><a href="../dicas/dicas.html">Dicas de saúde</a></li>
+              <li><a href="../calendario/example.html">Calendário</a></li>
+              <li><a href="../pomodoro/index.html">Pomodoro</a></li>
+              <li><a href="../../index.html">Sair</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+          
+
+      <div class="calendario">
+        <form>
+          <label for="data"> Data:</label>
+          <input type="date" id="data" name="dataNasc" />
+  
+      
+          <label for="inicio"> Início:</label>
+          <input type="time" id="inicio" name="inicio" />
+        
+          <label for="ate"> Até:</label>
+          <input type="time" id="ate" name="ate" />
+  
+          <label for="nota"> Anotações:</label>
+          <input type="text" placeholder="Insira a descrição..." id="nots" name="nota" />
+  
+          <br /><br />
+          <center>
+            <div class="aa"><a href="#">Concluir</a></div>
+          </center>
+        </form>
+  
+        <div class ="calendario">
+        <div id="myCalendarWrapper"></div>
+         </div>
+
+   
+
+   
+</body>
+
+<script src="CalendarPicker.js"></script>
+
+<script>
+    const nextYear = new Date().getFullYear() + 1;
+    const myCalender = new CalendarPicker('#myCalendarWrapper', {
+        // If max < min or min > max then the only available day will be today.
+        min: new Date(),
+        max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Nov 01 <nextYear>"
+        locale: 'en-US', // Can be any locale or language code supported by Intl.DateTimeFormat, defaults to 'en-US'
+        showShortWeekdays: false // Can be used to fit calendar onto smaller (mobile) screens, defaults to false
+    });
+
+    const currentDateElement = document.getElementById('current-date');
+    currentDateElement.textContent = myCalender.value;
+
+    const currentDayElement = document.getElementById('current-day');
+    currentDayElement.textContent = myCalender.value.getDay();
+
+    const currentToDateString = document.getElementById('current-datestring');
+    currentToDateString.textContent = myCalender.value.toDateString();
+
+    myCalender.onValueChange((currentValue) => {
+        currentDateElement.textContent = currentValue;
+        currentDayElement.textContent = currentValue.getDay();
+        currentToDateString.textContent = currentValue.toDateString();
+
+        console.log(`The current value of the calendar is: ${currentValue}`);
+    });
+</script>
+
+</html>

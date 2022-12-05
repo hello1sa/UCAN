@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kodchasan", serif;
+}
+
+.main {font-family: "Kodchasan", serif;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+}
+
+#se{
+    font-weight: 100;
+}
+
+/*Letters*/
+header a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.lilis a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/*Header*/
+
+.menu-container a {
+    font-family: "Kodchasan", serif;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    color:#000000;
+}
+
+.menu-container {
+    color: #000000;
+    display: flex;
+    height: 100px;
+    /* border: 1px solid #000000; */
+    width: 100%;
+    justify-content: space-between;
+    background-color: #cecaf7;
+    align-items: center;
+    text-decoration: none;
+    padding-right:3%;
+    padding-left:2%;
+}
+
+#sai{
+    font-family: "Kodchasan", serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000; 
+    background-color: #cecaf7;
+    border-width: 0px;
+    width: auto;
+}
+
+.ucan {
+    /* padding-top: 20px; */
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    font-family: "Kodchasan", serif;
+    font-size: 45px;
+    margin-left: 2%;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.menu-container ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+
+.select{
+    display: flex;
+    justify-content: center;
+    background-color: #cecaf7;
+    width: 40%;
+    color: white;
+    border-radius: 20px;
+    margin-top: 3%;
+    flex-direction: column;
+    align-self: center;
+    margin-left: 30%;
+    margin-bottom: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.lilis{
+    display: flex;
+    justify-content: center;   
+}
+
+.lili{
+    margin: 2%;
+    text-decoration: none;
+}
+
+
+.photo-grid-container {
+ display: flex;
+ width: 90%;
+ background-color: #ffff;
+ justify-content: center;
+  }
+  
+  .photo-grid {
+display: flex;
+width: 80%;
+height: 80%;
+flex-direction: row;
+background-color: #ffff;
+flex-wrap: wrap;
+justify-content: space-around;
+  }
+  
+.photo-grid-item{
+display: flex;
+width: 30%;
+}
+
+  img{
+    width:100%;
+    padding: 2%;
+  }
+
+  #podcasts,
+  #livros,
+  #pdfs{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    background-color: #cecaf7;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    border-radius: 10px;
+}
+

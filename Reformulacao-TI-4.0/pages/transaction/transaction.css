@@ -1,0 +1,153 @@
+main {
+    height: 100vh;
+}
+form {
+    width: 300px;
+}
+body{
+    background-color: aliceblue;
+}
+#boot{
+      width: 100%;
+      background: #1F96DB;
+      color:#000000;
+      
+      display: inline-block;
+      
+      border-radius: 4px;
+      box-sizing: border-box;
+  
+    
+}
+#save-button{
+  color: #000000;
+  width: 100%;
+  background: #1F96DB;
+  
+ 
+  display: inline-block;
+  
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.menu-container button{
+  padding: 0px 20px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#income,
+#expense{
+  display:flex;
+  width: auto;
+}
+
+input[type=radio]{
+  display:flex;
+  width: auto;
+}
+
+input,
+button,
+select {
+ padding: 10px;
+ width: -webkit-fill-available;
+}
+input[type="radio"] {
+  width: auto;
+}
+
+.loading {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.loading label {
+  font-size: 24px;
+}
+
+button {
+  cursor: pointer;
+}
+button:active {
+  opacity: 0.8;
+}
+button[disabled] {
+  opacity: 0.8;
+}
+
+button.fab {
+  width: 54px;
+  height: 54px;
+  border-radius: 50px;
+  border: none;
+  font-size: 24px;
+  box-shadow: 2px 2px 2px gray;
+}
+button.fab.fixed {
+  position: fixed;
+}
+button.fab.bottom {
+  bottom: 32px;
+}
+button.fab.right {
+  right: 32px;
+}
+
+.clear {
+  background: transparent;
+  border: none;
+  color: white;
+}
+.solid {
+  background: white;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+.outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.outline.danger {
+  color: red;
+  border-color: red;
+}
+
+.error {
+  background: red;
+  color: white;
+  display: none;
+} 
+
+.calendario{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-top:  2%;
+}
+
+#sai{
+    font-family: "Kodchasan", serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000; 
+    background-color: #cecaf7;
+    border-width: 0px;
+    width: auto;
+}
